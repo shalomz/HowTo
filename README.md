@@ -1,6 +1,8 @@
 # HowTo
 A Curated list on How-To's, ranging from any and all JS, Python, Django.
-# 1. How to Render Datepicker Widget on Multiple Fields
+Feel free to use all the snippets here for whatever functionality/scenario. I hope this becomes helpful!
+Contribute, contribute, contribute!
+# 1. How to Render A Datepicker Widget on Multiple Input Fields
 Say you want several input fields to have a datepicker widget, without explicitly defining the inputs for each one, or for the case where the input fields are generated dynamically, a possible fix (using jQuery) is written below:
 ::
     
@@ -12,3 +14,4 @@ Say you want several input fields to have a datepicker widget, without explicitl
 		})
 	</script>
 Whereby `dateinput` is the class of the input fields.
+The complete markup is coming
