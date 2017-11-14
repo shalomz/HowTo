@@ -14,4 +14,5 @@ Say you want several input fields to have a datepicker widget, without explicitl
 		})
 	</script>
 Whereby `dateinput` is the class of the input fields.
-The complete markup is coming
+The complete markup is coming.
+Where I found this useful: I had input fields that needed datepicker widgets within Django Formsets.
