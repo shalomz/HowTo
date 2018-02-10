@@ -16,3 +16,29 @@ Say you want several input fields to have a datepicker widget, without explicitl
 Whereby `dateinput` is the class of the input fields.
 The complete markup is coming.
 Where I found this useful: I had input fields that needed datepicker widgets within Django Formsets.
+
+# 2. How to find if today is in a range of given dates
+Say you hava an object with 2 Date attributes `start_date` and `end_date` and you would like to find the dates between the 2 dates:
+:: 
+
+	# Somewhere in your views.py
+	from datetime import date, timedelta
+	
+	def daterange(start_date, end_date):
+            """
+            Function to find all dates within a particular range of 2 dates
+   	    """
+    	    for n in range(int ((end_date - start_date).days)+1):
+            yield start_date + timedelta(n)
+			
+			
+	def your_view(request):
+	    # Logic here, for capturing the 2 dates and assigning them names, i.e. start_date and end_date
+	     now = date.today()  #Finding today's date
+	     if now in daterange(start_date, end_date): 
+                # Logic for if the date today is among the dates
+             else:
+                # Logic for if date today is not among the dates
+		
+
+		
