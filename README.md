@@ -29,7 +29,7 @@ Say you hava an object with 2 Date attributes `start_date` and `end_date` and yo
             Function to find all dates within a particular range of 2 dates
    	    """
     	    for n in range(int ((end_date - start_date).days)+1):
-                yield start_date + timedelta(n)
+	        yield start_date + timedelta(n)
 			
 			
 	def your_view(request):
