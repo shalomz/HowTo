@@ -204,6 +204,23 @@ If you want to see the logs you can open `CELERYD_LOG_FILE` provided in
     
     sudo nano /var/log/celery/worker1.log 
 
-## Resources
+## Additional - Flower Daemon
+
+You may want to run Flower, and the following is the sample  `/etc/systemd/system/flower.service` file  :
+
+	[Unit]
+	Description=Flower Celery Service
+
+	[Service]
+	User=your_user
+	Group=www-data
+	WorkingDirectory=/var/www/project-working-directory
+	ExecStart=/home/user/miniconda3/envs/virtualenv/bin/flower --port=5555  --loglevel=info -A yourproject
+	Restart=on-failure
+	Type=simple
+
+	[Install]
+	WantedBy=multi-user.target
+
 
 		
