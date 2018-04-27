@@ -8,11 +8,9 @@ run as a different user to limit consequences of a potential security breach.
 
 ### Prerequisites
 
-This article is a continuation of [a previous article on setting up Django with
-Nginx and Gunicorn](http://michal.karzynski.pl/blog/2013/06/09/django-nginx-
-gunicorn-virtualenv-supervisor/). You should start by following instructions
-in [that article](http://michal.karzynski.pl/blog/2013/06/09/django-nginx-
-gunicorn-virtualenv-supervisor/) and prepare a server with the following
+This article is a continuation of [a previous article on setting up Django with Nginx and Gunicorn] (http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/). 
+You should start by following instructions
+in [that article](http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/) and prepare a server with the following
 components:
 
   * Nginx
@@ -61,8 +59,7 @@ entries:
 
 ### Create system accounts for the webapps
 
-Even though Django has a pretty good [security track
-record](http://django.readthedocs.org/en/latest/releases/security.html), web
+Even though Django has a pretty good [security track record](http://django.readthedocs.org/en/latest/releases/security.html), web
 applications can become compromised. In order to make running multiple
 applications safer we'll create a separate system user account for each
 application. The apps will run on our system with the privileges of those
@@ -92,8 +89,7 @@ This is optional.
 ### Create Gunicorn start scripts
 
 For each application create a simple shell script based on my
-[gunicorn_start](https://gist.github.com/postrational/5747293#file-
-gunicorn_start-bash) template. The scripts differ only in the values of
+[gunicorn_start](https://gist.github.com/postrational/5747293#file-gunicorn_start-bash) template. The scripts differ only in the values of
 variables which they set.
 
 For the Hello app, set the following values in
@@ -214,8 +210,7 @@ You can also start them manually, if you prefer:
 ### Create Nginx virtual servers
 
 Finally we can create virtual server configurations for each app based on
-[this template](https://gist.github.com/postrational/5747293#file-hello-
-nginxconf). These will be stored in `/etc/nginx/sites-available` and then
+[this template](https://gist.github.com/postrational/5747293#file-hello-nginxconf). These will be stored in `/etc/nginx/sites-available` and then
 activated by links in `/etc/nginx/sites-enabled`.
 
 /etc/nginx/sites-available/hello
@@ -331,8 +326,7 @@ Say you want to serve Django applications under the domains `hello.test` and
 `goodbye.test` from a server with the IP address of `10.10.10.200`. You can
 simulate the appropriate DNS entries locally on your PC by putting the
 following line into your `/etc/hosts` file. On Windows the file is
-[conveniently hidden](http://en.wikipedia.org/wiki/Hosts_\(file\)#Location_in_
-the_file_system) in `%SystemRoot%\system32\drivers\etc\hosts`.
+[conveniently hidden](http://en.wikipedia.org/wiki/Hosts_\(file\)#Location_in_the_file_system) in `%SystemRoot%\system32\drivers\etc\hosts`.
 
 /etc/hosts
 
