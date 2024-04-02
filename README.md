@@ -4,7 +4,7 @@ Feel free to use all the snippets here for whatever functionality/scenario. I ho
 Contribute, contribute, contribute!
 # 1. How to Render A Datepicker Widget on Multiple Input Fields
 Say you want several input fields to have a datepicker widget, without explicitly defining the inputs for each one, or for the case where the input fields are generated dynamically, a possible fix (using jQuery) is written below:
-::
+```javascript
     
     <script>
 		$(document).ready(function () {
@@ -13,13 +13,14 @@ Say you want several input fields to have a datepicker widget, without explicitl
 			});
 		})
 	</script>
+```
 Whereby `dateinput` is the class of the input fields.
 The complete markup is coming.
 Where I found this useful: I had input fields that needed datepicker widgets within Django Formsets.
 
 # 2. How to find if today is in a range of given dates
 Say you hava an object with 2 Date attributes `start_date` and `end_date` and you would like to find the dates between the 2 dates:
-:: 
+```python
 
 	# Somewhere in your views.py
 	from datetime import date, timedelta
@@ -39,11 +40,11 @@ Say you hava an object with 2 Date attributes `start_date` and `end_date` and yo
                 # Logic for if the date today is among the dates
              else:
                 # Logic for if date today is not among the dates
-		
+```		
 # 3. Celery + Django
-# How to run celery as a daemon?
+## 4 How to run celery as a daemon?
 
-  1. Create `/etc/init.d/celeryd` with the content from [celery repo](https://github.com/celery/celery/blob/master/extra/generic-init.d/celeryd)
+  1. Create `/etc/init.d/celeryd` with the content from [the celery repo](https://github.com/celery/celery/blob/master/extra/generic-init.d/celeryd)
 
   2. Make `celeryd` executable
     
@@ -51,9 +52,7 @@ Say you hava an object with 2 Date attributes `start_date` and `end_date` and yo
     sudo nano /etc/init.d/celeryd
     
 
-Copy-paste code from [celery
-repo](https://github.com/celery/celery/blob/master/extra/generic-
-init.d/celeryd) to the file
+Copy-paste code from [celery repo](https://github.com/celery/celery/blob/master/extra/generic-init.d/celeryd) to the file
 
 Save `celeryd` (`CTR+X, y, Enter` from nano)
 
@@ -79,9 +78,7 @@ Run following commands from the terminal:
     sudo nano /etc/default/celeryd
     
 
-Configure it depending on what you need. Options and template can be found in
-the [docs](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html
-#init-script-celeryd)
+Configure it depending on what you need. Options and template can be found in the [docs](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html#init-script-celeryd)
 
 ### My example:
 
@@ -102,10 +99,7 @@ the [docs](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html
 
 **Note**
 
-You can set your environment variables in `/etc/default/celeryd`. For more
-info about environment variable take a look at this [SO
-answer](http://stackoverflow.com/questions/22759798/why-are-my-environment-
-variables-not-detected-when-starting-up-celery)
+You can set your environment variables in `/etc/default/celeryd`. For moreinfo about environment variable take a look at this [SOanswer](http://stackoverflow.com/questions/22759798/why-are-my-environment-variables-not-detected-when-starting-up-celery)
 
 ### Test it
 
@@ -133,9 +127,7 @@ Don't forget to stop the worker:
     sudo nano /etc/init.d/celerybeat
     
 
-Copy-paste code from [celery
-repo](https://github.com/celery/celery/blob/master/extra/generic-
-init.d/celerybeat) to the file
+Copy-paste code from [celeryrepo](https://github.com/celery/celery/blob/master/extra/generic-init.d/celerybeat) to the file
 
 Save `celerybeat` (`CTR+X, y, Enter` from nano)
 
@@ -161,9 +153,7 @@ Configurate either `/etc/default/celerybeat` or stick with
     sudo nano /etc/default/celerybeat
     
 
-Configure it depending on what you need. Options and template can be fount in
-the [docs](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html
-#init-script-celerybeat)
+Configure it depending on what you need. Options and template can be fount inthe [docs](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html#init-script-celerybeat)
 
 **Note**
 
